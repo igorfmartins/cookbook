@@ -1,6 +1,6 @@
 class RecipeTypesController < ApplicationController
   before_action :authenticate_user!, only: %i[create new index]
- 
+  before_action :authorize_user, only: %i[create new index]
 
   def index
     @recipe_types = RecipeType.all
@@ -30,7 +30,7 @@ class RecipeTypesController < ApplicationController
   private
 
   def recipe_type_params
-    params.require(:recipe_type).permit(:name, :user_id)
+    params.require(:recipe_type).permit(:name, user_id)
   end
 
   def authorize_user
