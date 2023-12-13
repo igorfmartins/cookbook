@@ -1,7 +1,8 @@
 <h1 class="text-center">
   CookBook<br>
-  <small class="text-muted">De chefs para chefs</small>
+  <small class="text-muted">De chefs para chefs</small>  
 </h1>
+<%= link_to 'Cadastrar novo tipo de receita', new_recipe_type_path %>
 <section id="recipes">
   <div class="d-flex flex-row">
     <% @recipes.each do |recipe| %>
@@ -19,6 +20,7 @@
     <% end %>
   </div>
 </section>
+
 
 <aside>
   <section id="recipe_types">
